@@ -1,31 +1,10 @@
 let palavras = [
-    'CARRO',
-    'PRAIA',
-    'BONECA',
-    'MOSTARDA',
-    'CALIBRE',
-    'COQUETEL',
-    'CORRIDA',
-    'MORTADELA',
-    'POUSADA',
-    'TERRA',
-    'COMIDA',
-    'VESTIDO',
-    'CADERNO',
-    'MAQUIAGEM',
-    'DIA',
-    'ESTRADA',
-    'ESTACIONAMENTO',
-    'OLHO',
-    'CASTELO',
-    'MOTO',
-    'BARBATANA',
-    'HOSPITAL',
-    'CASAMENTO',
-    'PEIXE',
-    'TRABALHO',
-    'MATERNIDADE',
-    'ELEFANTE'
+    'CARRO',    'PRAIA',    'BONECA',     'MOSTARDA',    'CALIBRE',
+    'COQUETEL', 'CORRIDA',  'MORTADELA',  'POUSADA',     'TERRA',
+    'COMIDA',   'VESTIDO',  'CADERNO',    'MAQUIAGEM',   'DIA',
+    'ESTRADA',  'ESTACIONAMENTO', 'OLHO', 'CASTELO',     'MOTO',
+    'BARBATANA','HOSPITAL', 'CASAMENTO',  'TRABALHO',    'DIAGRAMA',
+    'MATERNIDADE','ELEFANTE', 'PROFESSOR', 'ADVOGADO',    'TECLADO'   
 ];
 let letrasUsadas = [];
 let letrasCorretas = [];
@@ -34,14 +13,20 @@ let tentativas = 0;
 let sorteiaPalavra;
 
 function palavraSecreta(palavras) {
+    // Sorteia uma palavra do array
     sorteiaPalavra = palavras[Math.floor(Math.random() * palavras.length)];
+    // Divide a palavra sorteada em letras separadas
     letrasSeparadas = sorteiaPalavra.split("");
 
     return letrasSeparadas;
 }
 
 function verificaLetras(key) {
+    // Chave de teste para caracteres especiais
     let re = new RegExp("^[A-Z/s]+$");
+
+    //Checar condição valida
+
     if (letrasCorretas.includes(key) || key.length > 1 ||
         letrasUsadas.includes(key) || !re.test(key)) {
         return false;
@@ -50,12 +35,16 @@ function verificaLetras(key) {
     }
 }
 
+// Função para verificar se a letra está correta
 function letraCorreta(i) {
+    // Função para verificar se a letra está correta
     palavraCorreta += letrasSeparadas[i];
 }
 
 function letraIncorreta() {
+    // adiciona tentativas
     tentativas += 1;
+    // desenha partes do corpo
     if (tentativas == 1) {
         desenhaCabeca();
     }
@@ -78,18 +67,20 @@ function letraIncorreta() {
 }
 
 function fimDeJogo() {
+    // Mostrar o botão para iniciar um novo jogo
     let botaoNovoJogo = document.querySelector("#botao-novo-jogo");
     botaoNovoJogo.style.display = "block";
-
+    // Desenha a mensagem de fim de jogo
     pincel.font = "bold 40px Inter";
     pincel.fillStyle = "red";
     pincel.fillText("Você perdeu! A palavra escolhida era: " + letrasSeparadas,100,150);
 }
 
 function ganharJogo() {
+    //Mostrar botão novo jogo
     let botaoNovoJogo = document.querySelector("#botao-novo-jogo");
     botaoNovoJogo.style.display = "block";
-
+    // Exibir mensagem de parabéns
     pincel.font = "bold 40px Inter";
     pincel.fillStyle = "purple";
     pincel.fillText("Parabéns! Você ganhou!", 400, 150);

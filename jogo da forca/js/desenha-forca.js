@@ -2,6 +2,8 @@ letrasSeparadas = palavraSecreta(palavras);
 let tela = document.querySelector("canvas");
 let pincel = tela.getContext("2d");
 
+
+// Desenha traço de linha na tela
 function desenhaTraco(palavraSecreta) {
     tela.style.display = "block";
 
@@ -22,22 +24,28 @@ function desenhaTraco(palavraSecreta) {
 }
 
 function desenhaLetras(i) {
+     // define largura da linha e fonte
     pincel.lineWidth = 6;
     pincel.font = "bold 56px Inter";
+    // define cor de preenchimento e traçado
     pincel.fillStyle = "black";
     pincel.strokeStyle = "0A3871";
-
+// calcula eixo horizontal entre letras
     let eixo = 800 / letrasSeparadas.length;
     pincel.fillText(letrasSeparadas[i], 305 + eixo * i, 620);
     pincel.stroke();
 }
 
+
+
+//Desenhar função de letra incorreta
 function desenhaLetraIncorreta(teclas, tentativas) {
+// Define a largura da linha, fonte, estilos de preenchimento e traço
     pincel.lineWidth = 6;
     pincel.font = "bold 30px Inter";
     pincel.fillStyle = "black";
     pincel.strokeStyle = "0A3871";
-
+//Calcula o eixo para posicionamento correto das letras
     let eixo = 800 / letrasSeparadas.length;
     pincel.fillText(teclas, 535 + 40 * (6 - tentativas), 710, 40);
     pincel.stroke();
