@@ -4,7 +4,6 @@ LUCAS NOEL <BR>
 LUCAS CARVALHO
 
 
-# GAMEPLAY <BR>
 
 # DIAGRAMA DE CLASSE 
 ![diagrama de classe jogo da forca drawio](https://github.com/lucasnoelgb/JogoDaForca/assets/129121307/8fe894d6-d794-47ad-a3b7-4b48ed348963) <BR>
