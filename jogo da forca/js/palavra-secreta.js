@@ -16,7 +16,7 @@ function palavraSecreta(palavras) {
     // Sorteia uma palavra do array
     sorteiaPalavra = palavras[Math.floor(Math.random() * palavras.length)];
     // Divide a palavra sorteada em letras separadas
-    letrasSeparadas = sorteiaPalavra.split("");
+    letrasSeparadas = sorteiaPalavra;
 
     return letrasSeparadas;
 }
