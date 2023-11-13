@@ -12,4 +12,5 @@ LUCAS CARVALHO
 ![diagrama caso de uso forca png](https://github.com/lucasnoelgb/JogoDaForca/assets/129121307/76bc1cc9-95ac-41ff-ad21-c9f830e85e2f) <BR>
 
 # DIAGRAMA DE ATIVIDADE
-![diagrama de atividade drawio](https://github.com/lucasnoelgb/JogoDaForca/assets/129121307/489ee7f1-3263-486a-bc62-87f3707bca37)
+
+![Diagrama sem nome drawio](https://github.com/lucasnoelgb/JogoDaForca/assets/129121307/2ffd2487-5df0-4dbc-a8a2-5fad220193de)
